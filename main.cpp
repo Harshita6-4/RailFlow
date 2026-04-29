@@ -1,15 +1,12 @@
-// main.cpp - RailFlow Entry Point
-// Compile: g++ -std=c++17 -O2 -o railflow main.cpp
-
 #include <iostream>
 #include <vector>
 #include <iomanip>
 using namespace std;
 
-#include "graph.h"      // Harshita - structs + graph
-#include "conflict.h"   // Anant    - routing + conflict detection
-#include "platform.h"   // Anany    - ETA + platform allocation
-#include "export.h"     // Kavya    - JSON export
+#include "graph.h"     
+#include "conflict.h"   
+#include "platform.h"   
+#include "export.h"     
 
 int main() {
     cout << "=========================================\n";
@@ -64,6 +61,6 @@ int main() {
 
     cout << "\nConflicts detected: " << conflicts.size() << "\n";
     exportJSON(trains, g, conflicts, platforms, "output.json");
-    //cout << "\nDone! Open index.html to view the dashboard.\n";
+    cout << "\nDone! Open index.html to view the dashboard.\n";
     return 0;
 }
