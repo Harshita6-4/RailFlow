@@ -1,11 +1,5 @@
-// conflict.h - Anant
-// Routing Logic & Detection
-// dijkstra, conflict detection, conflict resolution
-
 #pragma once
 #include "graph.h"
-
-// ── DIJKSTRA ─────────────────────────────────────────────
 
 vector<int> dijkstra(const RailwayGraph& g, int src, int dst,
                      vector<double>& dist_out) {
@@ -38,7 +32,6 @@ vector<int> dijkstra(const RailwayGraph& g, int src, int dst,
     return path;
 }
 
-// dijkstra that avoids blocked edges - used for rerouting
 vector<int> dijkstraExclude(const RailwayGraph& g, int src, int dst,
     const vector<pair<int,int>>& blocked, vector<double>& dist_out) {
 
@@ -76,7 +69,6 @@ vector<int> dijkstraExclude(const RailwayGraph& g, int src, int dst,
     return path;
 }
 
-// ── ROUTE HELPERS ────────────────────────────────────────
 
 string pathStr(const vector<int>& path, const RailwayGraph& g) {
     string s;
@@ -107,7 +99,6 @@ void assignInitialRoutes(vector<Train>& trains, const RailwayGraph& g) {
     }
 }
 
-// ── CONFLICT DETECTION ───────────────────────────────────
 
 vector<TrackUsage> buildUsage(const Train& t, const RailwayGraph& g) {
     vector<TrackUsage> usage;
@@ -173,8 +164,6 @@ vector<Conflict> detectConflicts(vector<Train>& trains, const RailwayGraph& g) {
     if (conflicts.empty()) cout << "  No conflicts found.\n";
     return conflicts;
 }
-
-// ── CONFLICT RESOLUTION ──────────────────────────────────
 
 void resolveConflicts(vector<Train>& trains,
                       const vector<Conflict>& conflicts,
