@@ -1,7 +1,3 @@
-// export.h - Kavya
-// Frontend & Validation
-// writes output.json which index.html reads
-
 #pragma once
 #include "graph.h"
 #include <fstream>
