@@ -1,11 +1,5 @@
-// platform.h - Anany
-// Algorithms & Allocation
-// ETA calculation, platform allocation, greedy scheduling
-
 #pragma once
 #include "graph.h"
-
-// ── ETA CALCULATION ──────────────────────────────────────
 
 void computeETAs(vector<Train>& trains) {
     cout << "\n[ETACalc] Computing ETAs...\n";
@@ -19,8 +13,6 @@ void computeETAs(vector<Train>& trains) {
              << " => arrives " << toClockStr(t.arrival_time) << "\n";
     }
 }
-
-// ── PLATFORM ALLOCATION ──────────────────────────────────
 
 bool platformFree(const Platform& p, double arrive, double depart, double buf = 1.5) {
     for (auto& w : p.reservations)
