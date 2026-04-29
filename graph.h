@@ -1,7 +1,3 @@
-// graph.h - Harshita
-// System Design & Integration
-// structs, clock utility, graph framework
-
 #pragma once
 #include <iostream>
 #include <vector>
@@ -16,8 +12,6 @@
 #include <set>
 using namespace std;
 
-// ── CLOCK ────────────────────────────────────────────────
-
 const int BASE_HOUR = 6, BASE_MINUTE = 0;
 
 string toClockStr(double sim_mins) {
@@ -29,8 +23,6 @@ string toClockStr(double sim_mins) {
     o << dh << ":" << setw(2) << setfill('0') << m << " " << period;
     return o.str();
 }
-
-// ── STRUCTS ───────────────────────────────────────────────
 
 enum class Priority { LOW = 1, NORMAL = 2, HIGH = 3 };
 
@@ -75,8 +67,6 @@ struct Platform {
     struct Window { double arrive, depart; int train_id; };
     vector<Window> reservations;
 };
-
-// ── GRAPH ────────────────────────────────────────────────
 
 struct Edge    { int to; double weight; string track_id; };
 struct Station { int id; string name; double x, y; };
